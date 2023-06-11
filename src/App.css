@@ -1,42 +1,127 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+
+  --primary: #605DEC;
+  --secondary: #A1B0CC;
+  color: #7C8DB0;
+
+}
+
+.navbar {
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em 1em;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  cursor: pointer;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navigations {
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.nav-item {
+  padding: 1em 1.5em;
+  cursor: pointer;
 }
 
-.card {
-  padding: 2em;
+.nav-item:hover {
+  color: #000;
+  margin-top: -0.5em;
 }
 
-.read-the-docs {
-  color: #888;
+.button-primary {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-primary:hover {
+  background: #4342a8;
+  margin-top: -0.5em;
+  color: var(--secondary);
+}
+
+.hero {
+  background-image: url('../public/img/hero.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-body {
+  max-width: 50vw;
+  text-align: center;
+}
+
+.hero-text {
+  color: var(--primary);
+  font-size: 5em;
+}
+
+.flight-form {
+  padding:0;
+  box-shadow: 0px 2px 4px rgba(7, 4, 146, 0.1), 0px 24px 60px rgba(6, 47, 125, 0.05), 0px 12px 24px rgba(27, 59, 119, 0.05);
+
+  display: flex;
+}
+
+.flight-form-input {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  border: 0.5px solid var(--secondary);
+  padding: 0 1em;
+  color: var(--secondary);
+  background: white;
+}
+
+.flight-form-input:hover {
+  border: 1px solid var(--primary);
+}
+
+.flight-input {
+  border: none;
+  padding: 1em;
+  color: var(--secondary);
+}
+
+input.flight-input:focus {
+  outline: none;
+  color: var(--secondary);
+}
+
+.flight-input-button {
+  border: none;
+  padding: 0em;
+  color: var(--secondary);
+}
+
+.flight-search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:  var(--primary);
+  color: white;
+  height: 100%;
+  width: 100%;
+  padding: 0 2em;
+  cursor: pointer;
+}
+
+.flight-search-button:hover {
+  background: #4342a8;
 }
