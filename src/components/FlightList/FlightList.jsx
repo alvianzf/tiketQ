@@ -5,7 +5,6 @@ import axios from "axios";
 import styled from "styled-components";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import logo from "../../logo.svg";
-// import Ads from "../HotelDetails/Ads";
 import {
   FormControlLabel,
   makeStyles,
@@ -72,7 +71,7 @@ const Wrapper = styled.div`
 `;
 
 export const FlightList = () => {
-  const [hotels, setHotels] = useState([]);
+  const [flight, setFlights] = useState([]);
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(false);
   const classes = useStyle();
@@ -82,7 +81,7 @@ export const FlightList = () => {
 
   useEffect(() => {
     getData();
-    console.log(hotels);
+    console.log(flight);
   }, []);
 
   const handleQueryChange = (val) => {
@@ -101,7 +100,7 @@ export const FlightList = () => {
       return item.price >= a && item.price < b;
     });
 
-    setHotels(newData);
+    setFlights(newData);
     setTimeout(() => {
       setloading(false);
     }, 2000);
@@ -114,7 +113,7 @@ export const FlightList = () => {
       .then((res) => {
         const { data } = res;
         setData(data);
-        setHotels(data);
+        setFlights(data);
         setloading(false);
       })
       .catch((err) => {
@@ -129,7 +128,7 @@ export const FlightList = () => {
         return item.starRating >= star;
       });
 
-      setHotels(newData);
+      setFlights(newData);
 
       setTimeout(() => {
         setloading(false);
@@ -263,7 +262,7 @@ export const FlightList = () => {
           <Mealplans />
         </div>
 
-        {/*------------------------------------------------------------------------------------------>>>>>> Hotel List  */}
+        {/*------------------------------------------------------------------------------------------>>>>>> Flight List  */}
 
         <div className="list">
           {loading ? (
@@ -272,7 +271,7 @@ export const FlightList = () => {
               <CircularProgress />
             </div>
           ) : (
-            hotels.map((item) => {
+            flight.map((item) => {
               return (
                 <Flightcard
                   handleOpenFlight={handleOpenFlight}

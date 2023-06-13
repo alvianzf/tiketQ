@@ -20,7 +20,7 @@ const Wrapper = styled.div`
     border-radius: 0.5rem 0 0 0.5rem;
   }
 
-  .hotel-detail {
+  .flight-detail {
     width: 50%;
     margin-left: 0.5rem;
     display: flex;
@@ -28,16 +28,16 @@ const Wrapper = styled.div`
     justify-content: space-between;
   }
 
-  .hotel-name,
-  .hotel-city {
+  .flight-name,
+  .flight-city {
     margin: 0.1rem 0;
   }
 
-  .hotel-name-add {
+  .flight-name-add {
     margin-top: 5px;
   }
 
-  .hotel-city {
+  .flight-city {
     color: #505c66;
     padding-bottom: 0.5rem;
   }
@@ -89,7 +89,7 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Flightcard = ({ data, handleOpenHotel }) => {
+export const Flightcard = ({ data, handleOpenFlight }) => {
     return (
         <Wrapper
             onClick={() => {
@@ -97,10 +97,10 @@ export const Flightcard = ({ data, handleOpenHotel }) => {
             }}
         >
             {/* <img className="card-image" src={data.images[1].url} alt="" /> */}
-            <div className="hotel-detail">
-                <div className="hotel-name-add">
-                    <h3 className="hotel-name">{data.name}</h3>
-                    <div className="hotel-city">{data.destination}</div>
+            <div className="flight-detail">
+                <div className="flight-name-add">
+                    <h3 className="flight-name">{data.name}</h3>
+                    <div className="flight-city">{data.destination}</div>
                 </div>
                 <div className="desc-rating">
                     <div className="description">Fully refundable</div>

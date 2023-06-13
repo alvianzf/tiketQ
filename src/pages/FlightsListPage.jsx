@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useEffect } from "react";
-// import { HotelList } from "../Components/HotelsList/HotelList";
 import { FlightList } from "../components/FlightList/FlightList";
 import logo from "../logo.svg";
 import { CircularProgress } from "@material-ui/core";

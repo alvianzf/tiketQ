@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 export default function FlightForm(props) {
     const history = useHistory();
 
-    const handleHotelSearch = () => {
+    const handleflightSearch = () => {
         history.push("/flights");
     }
     return (
@@ -20,7 +20,7 @@ export default function FlightForm(props) {
                 <input name="from" type="date" placeholder="Date" className="flight-input"></input>
             </div>
             <div className="flight-input-button">
-                <button className="flight-search-button" onClick={(e) => { e.stopPropagation(); handleHotelSearch(); }}>Search</button>
+                <button className="flight-search-button" onClick={(e) => { e.stopPropagation(); handleflightSearch(); }}>Search</button>
             </div>
         </div>
     )
