@@ -2,7 +2,7 @@ import '../App.css'
 import Hero from '../components/hero';
 import NavigationItems from '../components/navigationItems.jsx';
 
-export default function MainPage(props) {
+export function MainPage() {
 
     return (
         <>
