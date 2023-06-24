@@ -90,6 +90,7 @@ const Wrapper = styled.div`
 `;
 
 export const Flightcard = ({ data, handleOpenFlight }) => {
+  console.log('handleOpenFlight', handleOpenFlight)
     return (
         <Wrapper
             onClick={() => {
