@@ -35,9 +35,7 @@
     "styled-components": "^6.0.0-rc.3",
     "sweetalert": "^2.1.2",
     "uuid": "^9.0.0",
-    "web-vitals": "^3.3.2",
-    "vite": "^4.3.9",
-    "@vitejs/plugin-react": "^4.0.0"
+    "web-vitals": "^3.3.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
