@@ -3,7 +3,7 @@ import MainHotel from '../components/FlightDetail/MainHotel'
 import { useParams } from 'react-router-dom'
 import { useAxios } from '../Hooks/useAxios'
 import { CircularProgress } from '@material-ui/core'
-import logo from '../logo.svg'
+import logo from '../assets/spinner.svg'
 
 export const FlightDetail = () => {
     const { id } = useParams()

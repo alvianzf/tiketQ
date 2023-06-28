@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import StarRateIcon from "@material-ui/icons/StarRate";
-import logo from "../../logo.svg";
+import logo from "../../assets/spinner.svg";
 import {
   FormControlLabel,
   makeStyles,

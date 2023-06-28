@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { FlightList } from "../components/FlightList/FlightList";
-import logo from "../logo.svg";
+import logo from "../assets/spinner.svg";
 import { CircularProgress } from "@material-ui/core";
 import styled from "styled-components";
 
