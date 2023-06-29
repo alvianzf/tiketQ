@@ -23,6 +23,7 @@ import { PropertyType } from "./Filters/PropertyType";
 import { PopularLocation } from "./Filters/PopularLocation";
 import { Mealplans } from "./Filters/MealPlans";
 import { useHistory } from "react-router";
+import NavigationItems from '../navigationItems';
 // import { useAxios } from "../../Hooks/useAxios";
 
 const useStyle = makeStyles({
@@ -149,10 +150,10 @@ export const FlightList = () => {
     <>
       <Wrapper>
         <div className="sorting">
-          <SearchByProperty
+          {/* <SearchByProperty
             handleQueryChange={handleQueryChange}
             query={searchQuery}
-          />
+          /> */}
 
           {/* ---------------------------------------------------------------------------------------------------Star rating  */}
           <div className="filter-title">Star rating</div>
@@ -267,7 +268,7 @@ export const FlightList = () => {
         <div className="list">
           {loading ? (
             <div className="progress">
-              <img src={logo} alt="" />
+              {/* <img src={logo} alt="" /> */}
               <CircularProgress />
             </div>
           ) : (

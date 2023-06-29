@@ -4,9 +4,12 @@ import { useParams } from 'react-router-dom'
 import { useAxios } from '../Hooks/useAxios'
 import { CircularProgress } from '@material-ui/core'
 import logo from '../assets/spinner.svg'
+import NavigationItems from '../components/navigationItems.jsx';
+import { useHistory } from "react-router-dom";
 
 export const FlightDetail = () => {
     const { id } = useParams()
+    let history = useHistory();
     const [isLoading, setIsLoading] = useState(false)
 
     const { hotelData } = useAxios(`https://my-api-data.herokuapp.com/data?hotelId=${id}`)
@@ -15,7 +18,7 @@ export const FlightDetail = () => {
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(true)
-        }, 2500);
+        }, 1500);
     }, [])
 
     const styles = {
@@ -31,6 +34,14 @@ export const FlightDetail = () => {
         img: {
             width: '100px',
         },
+        button: {
+            backgroundColor: '#04AA6D',
+            display: 'inline-block',
+            padding: '8px 16px',
+            borderColor: 'transparent',
+            borderRadius: '10px',
+            color: 'white'
+          }
 
     }
 
@@ -38,10 +49,12 @@ export const FlightDetail = () => {
         <>
             {isLoading && hotelData.length > 0 ?
                 <div>
+                    <NavigationItems items={['Flights', 'Hotels', 'Packages', 'Sign In']}/>
+                    <button onClick={() => history.goBack()} className="button">&laquo; Back</button>
                     <MainHotel hotelData={hotelData[0]} id={id} />
                 </div>
                 : <div style={styles.progress}>
-                    <img src={logo} alt="" style={styles.img} />
+                    {/* <img src={logo} alt="" style={styles.img} /> */}
                     <CircularProgress />
                 </div>}
         </>
