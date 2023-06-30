@@ -94,29 +94,30 @@ export const Flightcard = ({ data, handleOpenFlight }) => {
     return (
         <Wrapper
             onClick={() => {
-                handleOpenFlight(data.flightNo);
+                handleOpenFlight(data.flight_code);
             }}
         >
             {/* <img className="card-image" src={data.images[1].url} alt="" /> */}
             <div className="flight-detail">
                 <div className="flight-name-add">
-                    <h3 className="flight-name">{data.name}</h3>
-                    <div className="flight-city">{data.destination}</div>
+                    <h3 className="flight-name">{data.flight}</h3>
+                    <span>{data.flight_date}</span>
+                    <div className="flight-city">{data.flight_infotransit}</div>
                 </div>
                 <div className="desc-rating">
                     <div className="description">Fully refundable</div>
                     <div className="description">Reserve Now Pay Later</div>
-                    <div className="rating">
-                        <span className="star">{data.price}/5.0</span> Excellent (356
+                    {/* <div className="rating">
+                        <span className="star">{data.flight_price}/5.0</span> Excellent (356
                         reviews)
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="price-detail">
                 <div className="off">We have 5 left at 25% off</div>
-                <div className="price">${data.price}</div>
-                <div>Per night</div>
-                <div className="total-price">${data.price + 20} Total</div>
+                <div className="price">Rp.{data.flight_price}</div>
+                <div>{data.flight_route}</div>
+                <div className="total-price">Rp.{data.flight_price + 20} Total</div>
                 <div>Includes taxes and fees</div>
             </div>
         </Wrapper>

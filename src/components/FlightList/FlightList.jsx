@@ -98,7 +98,7 @@ export const FlightList = () => {
   const handlePriceFilter = (a, b) => {
     setloading(true);
     const newData = data.filter((item) => {
-      return item.price >= a && item.price < b;
+      return item.flight_price >= a && item.flight_price < b;
     });
 
     setFlights(newData);
@@ -107,19 +107,64 @@ export const FlightList = () => {
     }, 2000);
   };
 
+  // const getData = () => {
+  //   setloading(true);
+  //   axios
+  //     .get("https://my-json-server.typicode.com/mneema/mock-db/flights")
+  //     .then((res) => {
+  //       const { data } = res;
+  //       setData(data);
+  //       setFlights(data);
+  //       setloading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
   const getData = () => {
     setloading(true);
-    axios
-      .get("https://my-json-server.typicode.com/mneema/mock-db/flights")
-      .then((res) => {
-        const { data } = res;
-        setData(data);
-        setFlights(data);
-        setloading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const data = [   
+      {     
+        "flight_id": "04",     
+        "flight": "Airasia",     
+        "flight_code": "XT-7680",     
+        "flight_image": "https://da8hvrloj7e7d.cloudfront.net/imageResource/2015/12/17/145034917439 0-23151020ad74cd0811255b320fcea754.png",     
+        "flight_from": "CGK",     
+        "flight_to": "SUB",     
+        "flight_route": "CGK-SUB",     
+        "flight_date": "2018-05-30",     
+        "flight_transit": "Nonstop",     
+        "flight_infotransit": "Jakarta(CGK) 06:50 - Surabaya(SUB) 08:20",     
+        "flight_datetime": "06:50 - 08:20",     
+        "flight_price": "475220",     
+        "flight_publishfare": "350200",     
+        "flight_seatavail": "9",     
+        "flight_baggage": "15 Kg",     
+        "flight_facilities": "-"  
+      },
+      {     
+        "flight_id": "04",     
+        "flight": "Airasia",     
+        "flight_code": "XT-7680",     
+        "flight_image": "https://da8hvrloj7e7d.cloudfront.net/imageResource/2015/12/17/145034917439 0-23151020ad74cd0811255b320fcea754.png",     
+        "flight_from": "CGK",     
+        "flight_to": "SUB",     
+        "flight_route": "CGK-SUB",     
+        "flight_date": "2018-05-30",     
+        "flight_transit": "Nonstop",     
+        "flight_infotransit": "Jakarta(CGK) 06:50 - Surabaya(SUB) 08:20",     
+        "flight_datetime": "06:50 - 08:20",     
+        "flight_price": "475220",     
+        "flight_publishfare": "350200",     
+        "flight_seatavail": "9",     
+        "flight_baggage": "15 Kg",     
+        "flight_facilities": "-"  
+      }
+    ] 
+    setData(data);
+    setFlights(data);
+    setloading(false);
   };
 
   const handleStar = useCallback(

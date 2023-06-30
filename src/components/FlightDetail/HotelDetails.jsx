@@ -12,9 +12,10 @@ import CloseIcon from '@material-ui/icons/Close';
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 
-const FlightDetail = ({ hotelData, id }) => {
+const FlightDetail = ({ flightData, id }) => {
 
-    const { images } = hotelData
+    console.log('flightData details:', flightData)
+    const { images } = flightData
 
     const options = [
         { title: "Overview", to: "#" },
@@ -35,7 +36,7 @@ const FlightDetail = ({ hotelData, id }) => {
     };
 
     const [current, setCurrent] = useState(0);
-    const length = images.length;
+    const length = images;
 
     const nextSlide = () => {
         setCurrent(current === length - 1 ? 0 : current + 1);
@@ -51,13 +52,13 @@ const FlightDetail = ({ hotelData, id }) => {
             <FaChevronLeft className={styles.left_arrow} onClick={prevSlide} />
             <FaChevronRight className={styles.right_arrow} onClick={nextSlide} />
             <div className={styles.modal_img}>
-                {images.map((slide, index) => {
+                {/* {images.map((slide, index) => {
                     return (
                         <div key={index}>
                             {index === current && <img src={slide.url} alt="hotelImages" />}
                         </div>
                     );
-                })}
+                })} */}
 
             </div>
         </div>
@@ -65,7 +66,7 @@ const FlightDetail = ({ hotelData, id }) => {
 
     return (
         <>
-            <div className={styles.flex} onClick={handleOpen} style={{ cursor: 'pointer' }}>
+            {/* <div className={styles.flex} onClick={handleOpen} style={{ cursor: 'pointer' }}>
                 <div className={styles.left}>
                     <img src={hotelData.images[0].url} alt="" />
                 </div>
@@ -89,14 +90,13 @@ const FlightDetail = ({ hotelData, id }) => {
                     <p key={i}><a href={option.to}>{option.title}</a></p>
                 ))}
                 <button className={styles.optionBtn}><a href="#rooms">Reserve a room</a></button>
-            </div>
+            </div> */}
 
-            <div className={styles.flex} style={{ background: '#FFF', borderRadius: '0 0 10px 10px' }}>
+            {/* <div className={styles.flex} style={{ background: '#FFF', borderRadius: '0 0 10px 10px' }}>
                 <div className={styles.left_1} id="overview">
                     <HotelOverview hotelData={hotelData} />
                 </div>
                 <div className={styles.right_1}>
-                    {/* <HotelMap hotelData={hotelData} /> */}
                 </div>
             </div>
 
@@ -104,7 +104,7 @@ const FlightDetail = ({ hotelData, id }) => {
                 {hotelData.roomTypes.map(room => (
                     <Rooms key={room.roomTypeId} room={room} hId={id} />
                 ))}
-            </div>
+            </div> */}
 
             <div id="location">
                 <AboutArea />
