@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Payment } from "../Components/Payment/Payment";
+import { Payment } from "../components/Payment/Payment";
 import { useAxios } from "../Hooks/useAxios";
 import { useHistory } from "react-router-dom";
 import swal from 'sweetalert'
