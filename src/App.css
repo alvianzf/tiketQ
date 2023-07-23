@@ -3,7 +3,13 @@
   --primary: #605DEC;
   --secondary: #A1B0CC;
   color: #7C8DB0;
+  
+}
 
+body {
+  background: hsl(0, 0%, 100%);
+  place-items: start !important;
+  
 }
 
 .navbar {
@@ -13,6 +19,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5em 1em;
+}
+
+input {
+  border: none;
+  background: #fff;
+}
+
+input:focus {
+  border-bottom: 1px solid blue;
 }
 
 .logo {
@@ -27,6 +42,7 @@
 .nav-item {
   padding: 1em 1.5em;
   cursor: pointer;
+  color: var(--secondary)
 }
 
 .nav-item:hover {

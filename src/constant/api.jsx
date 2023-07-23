@@ -1,1 +1,0 @@
-export const UrlApi = 'http://143.198.208.181:3000/api/'
