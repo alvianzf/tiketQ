@@ -20,3 +20,12 @@ export const getArea = async () : Promise<Array> => {
 
 }
 
+export const getFlight = async (to, from, date) :Promise<Array> => {
+    let result: Object = [];
+
+    await data.post('/getflights-json', {to, from, date})
+        .then(res => result =res.data)
+        .catch(err => result = err);
+
+    return result
+}
