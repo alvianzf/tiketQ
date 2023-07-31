@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { getFlight } from '../services/api';
-
+import FlightCard from '../components/FlightCard';
 
 function Flights() {
   const [params] = useSearchParams();
@@ -19,12 +19,27 @@ function Flights() {
         };
 
     fetchAirport();
-
-    console.log(flights)
 }, []);
 
   return (
-    <div>Flights</div>
+    <>
+      <div className="header-bar">
+        <div className="flight-route">
+          {from} - {to}
+          <div className="flight-date">
+            {date}
+          </div>
+        </div>
+        <div className="flight-length">
+          {flights.length} Flights
+        </div>
+      </div>
+      <div className="flight-container">
+        {flights.map((flight, i) => 
+            <FlightCard key={i} flight={flight} to={to} from={from} date={date} />
+          )}
+      </div>
+    </>
   )
 }
 

@@ -10,7 +10,6 @@ import moment from "moment";
 export default function FlightForm() {
 
     const [airport, setAirport] = useState([]);
-    const [options, setOptions] = useState([]);
     const [startDate, setStartDate] = useState(new Date());
     const [from, setFrom] = useState("");
     const [to, setTo] = useState("");

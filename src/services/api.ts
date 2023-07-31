@@ -29,3 +29,13 @@ export const getFlight = async (to, from, date) :Promise<Array> => {
 
     return result
 }
+
+export const getPrice = async (params: Object) :Promise<Array> => {
+    let result: Object = [];
+
+    await data.post('/getprice-json', params)
+        .then(res => result =res.data)
+        .catch(err => result = err);
+
+    return result
+}

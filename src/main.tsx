@@ -7,7 +7,7 @@ import { RouterProvider } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <>
-    <NavigationItems items={['Flights', 'Hotels', 'Sign-In']} />
+    <NavigationItems items={['Sign-In']} />
     <RouterProvider router={routes} />
   </>
 )
