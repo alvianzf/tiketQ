@@ -9,7 +9,7 @@ export default function NavigationItems(props:Props) {
 
     return (
         <div className="navbar">
-            <div className="logo">Logo</div>
+            <a href="/" className="logo">Logo</a>
             <div className="navigations">
                 {items.map((i: any, key: any) => (
                 <a href={i.toLowerCase()} key={key} className='nav-item'>{i}</a>)
