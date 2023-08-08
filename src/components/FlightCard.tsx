@@ -1,14 +1,34 @@
 import { useState } from "react";
 import { createSearchParams, useNavigate } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 
-export default function FlightCard({ flight, to, from, date }) {
+type Props = {
+  flight: string;
+  to: string;
+  from: string;
+  date: string;
+}
+
+type Params = {
+  to: string;
+  from: string;
+  date: string;
+  adult: string;
+  child: string;
+  infant: string;
+  flight: string;
+}
+
+
+
+export default function FlightCard({ flight, to, from, date } : Props) {
   const [adult, setAdult] = useState(1);
   const [child, setChild] = useState(0);
   const [infant, setInfant] = useState(0);
 
   const navigate = useNavigate();
 
-  const handleChange = (type, e) => {
+  const handleChange = (type: string, e: any) => {
     if (type === "adult") {
       setAdult(e.target.value);
     } else if (type === "child") {
@@ -18,16 +38,7 @@ export default function FlightCard({ flight, to, from, date }) {
     }
   };
 
-  type Params = {
-    to: string;
-    from: string;
-    date: string;
-    adult: string;
-    child: string;
-    infant: string;
-    flight: string;
-}
-
+  
   const handleClick = () => {
     const params: Params = { to, from, date, adult: adult.toString(), child: child.toString(), infant: infant.toString(), flight: flight.flight_code };
     const searchParams = createSearchParams(params);

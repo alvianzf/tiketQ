@@ -2,6 +2,29 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getPrice } from "../services/api";
 
+type Flights = {
+      adult: string;
+      child: string;
+      infant: string;
+      flight: string;
+      flight_availableseat: string;
+      flight_code: string;
+      flight_date: string;
+      flight_duration: string | null;
+      flight_form: string;
+      flight_price: number | null;
+      flight_time: string;
+      flight_id: string;
+      flight_image: string;
+      flight_infotransit: string;
+      flight_to: string;
+      publish: string;
+      result: string;
+      text: string;
+      totalfare: string;
+      
+}
+
 export default function FlightDetails() {
   const [params] = useSearchParams();
   const to = params.get("to");
@@ -21,22 +44,26 @@ export default function FlightDetails() {
     }); 
 
 
-  useEffect(() => {
-    const fetchAirport = async () => {
-      let detail = await getPrice({
-        to,
-        from,
-        date,
-        flight: flight_code,
-        adult,
-        child,
-        infant,
-      });
-      setFlights(detail);
-    };
-
-    fetchAirport();
-  }, [to, from, date, flight_code, adult, child, infant]); // Add the necessary dependencies
+    useEffect(() => {
+      const fetchAirport = async () => {
+        try {
+          const detail: Flights = await getPrice({
+            to,
+            from,
+            date,
+            flight: flight_code,
+            adult,
+            child,
+            infant,
+          });
+          setFlights(detail);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+    
+      fetchAirport();
+    }, [to, from, date, flight_code, adult, child, infant]); // Add the necessary dependencies
 
   console.log(flights);
 
