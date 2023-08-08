@@ -9,6 +9,13 @@ import moment from "moment";
 
 export default function FlightForm() {
 
+    type AirportItem = {
+        code: string;
+        city: string;
+        airport: string;
+        grup: string;
+    }
+
     const [airport, setAirport] = useState([]);
     const [startDate, setStartDate] = useState(new Date());
     const [from, setFrom] = useState("");
@@ -24,7 +31,7 @@ export default function FlightForm() {
 
     }, []);
 
-    const handleChange = (type, val) => {
+    const handleChange = (type: string, val: any) => {
         if (type == 'from') {
             setFrom(val.target.value);
         } else {
@@ -63,7 +70,7 @@ export default function FlightForm() {
             </div>
 
             <datalist id="airports">
-                {airport.map((item) => (
+                {airport.map((item: AirportItem) => (
                     <option key={item.code} value={item.code}>{item.airport ? item.airport : item.city} - {item.city}</option>
                 ))}
             </datalist>

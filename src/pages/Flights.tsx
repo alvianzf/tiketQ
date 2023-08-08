@@ -34,10 +34,14 @@ function Flights() {
           {flights.length} Flights
         </div>
       </div>
-      <div className="flight-container">
-        {flights.map((flight, i) => 
-            <FlightCard key={i} flight={flight} to={to} from={from} date={date} />
-          )}
+      <div className="wrapper">
+        <div className="flights-wrapper">
+          <div className="flight-container">
+            {flights.map((flight, i) => 
+                <FlightCard key={i} flight={flight} to={to} from={from} date={date} />
+              )}
+          </div>
+        </div>
       </div>
     </>
   )

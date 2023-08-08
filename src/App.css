@@ -135,7 +135,7 @@ input.flight-input:focus {
   color: white;
   height: 100%;
   width: 100%;
-  padding: 0 2em;
+  padding: 0.8em 2em;
   cursor: pointer;
 }
 
@@ -168,11 +168,28 @@ input.flight-input:focus {
   color: white;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.flights-wrapper {
+  overflow-y: auto;
+  height: 70% !important;
+  width: 50%;
+  margin-top: 3em;
+  padding: 1em;
+  border-radius: 30px;
+}
+
+.flights-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 .flight-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow-y: auto;
   padding: 1em 3em;
 }
 
@@ -346,4 +363,9 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
+}
+
+.css-13cymwt-control {
+  border: none !important;
+  width: 100% !important;
 }
