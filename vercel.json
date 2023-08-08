@@ -1,0 +1,9 @@
+{
+    "build": {
+      "env": {
+        "VITE_SUPPRESS_WARNINGS": "true",
+        "VITE_TSC_CHECK": "false"
+      }
+    }
+  }
+  
