@@ -171,12 +171,14 @@ input.flight-input:focus {
 .wrapper {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 84.3vh;
+  position:relative;
+  background: #ebeaea;
 }
 
 .flights-wrapper {
   overflow-y: auto;
-  height: 70% !important;
+  height: 85% !important;
   width: 50%;
   margin-top: 3em;
   padding: 1em;
@@ -194,6 +196,7 @@ input.flight-input:focus {
 }
 
 .flight-card {
+  background: #fff;;
   display: flex;
   padding: 1em 2em;
   border: 1px solid var(--secondary);
@@ -227,18 +230,18 @@ input.flight-input:focus {
 }
 
 .flight-name {
-  font-size: 3em;
+  font-size: 1.5em;
   color: var(--primary);
   font-weight: bolder;
 }
 
 .flight-code {
-  font-size: large;
+  font-size: normal;
   color: #000;
 }
 
 .flight_duration {
-  font-size: small;
+  font-size: smaller;
   color: red;
 }
 
@@ -254,15 +257,20 @@ input.flight-input:focus {
   justify-content: center;
 }
 
+.flight-info-left {
+  max-width: 50%;;
+}
+
 .flight-fare {
   color: red;
-  font-size: 2em;
+  font-size: 1.3em;
   font-weight: bolder;
 }
 
 .flught_seatavail {
   margin-top: 1em;
   color: green;
+  font-size: 1em;
 }
 
 .flight-baggage {
@@ -302,16 +310,22 @@ input.flight-input:focus {
   color: #000;
   width: 3em;
   border-bottom: 0.5px solid var(--secondary);
+  font-size: 0.7em;
 
 }
 
 .passenger-form {
   margin-left: 0.5em;
+  
 }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   opacity: 1;
+}
+
+.buy-ticket-btn {
+  font-size: 0.8em;
 }
 
 .buy-ticket-btn:hover {

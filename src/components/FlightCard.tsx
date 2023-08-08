@@ -18,15 +18,25 @@ export default function FlightCard({ flight, to, from, date }) {
     }
   };
 
+  type Params = {
+    to: string;
+    from: string;
+    date: string;
+    adult: string;
+    child: string;
+    infant: string;
+    flight: string;
+}
+
   const handleClick = () => {
-    const params = { to, from, date, adult, child, infant, flight: flight.flight_code };
+    const params: Params = { to, from, date, adult: adult.toString(), child: child.toString(), infant: infant.toString(), flight: flight.flight_code };
     const searchParams = createSearchParams(params);
 
     navigate(`/flight-details?${searchParams}`);
   };
 
   return (
-    <div className="flight-card">
+    <div className="flight-card" onClick={handleClick}>
       <div className="flight-image">
         <img src={flight.flight_image} alt={flight.flight_code}></img>
       </div>
