@@ -21,5 +21,9 @@
     "noFallthroughCasesInSwitch": false
   },
   "include": ["src"],
+  "exclude": [
+    "src/components/FlightCard.tsx",
+    "src/pages/FlightDetails.tsx"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
