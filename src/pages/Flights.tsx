@@ -59,7 +59,7 @@ function Flights() {
               data-testid="loader"
             />
           </div>
-            {flights.map((flight, i) => 
+            {flights?.map((flight, i) => 
                 <FlightCard key={i} flight={flight} to={to} from={from} date={date} />
               )}
           </div>

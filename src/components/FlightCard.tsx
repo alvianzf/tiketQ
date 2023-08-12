@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { createSearchParams, useNavigate } from "react-router-dom";
-import { ClipLoader } from "react-spinners";
 
 type Props = {
   flight: string;
@@ -19,6 +18,10 @@ type Params = {
   flight: string;
 }
 
+let IDR = Intl.NumberFormat('id-ID', {
+  style: 'currency',
+  currency: 'IDR'
+})
 
 
 export default function FlightCard({ flight, to, from, date } : Props) {
@@ -68,7 +71,7 @@ export default function FlightCard({ flight, to, from, date } : Props) {
           </div>
         </div>
         <div className="flight-info-right">
-          <div className="flight-fare">{flight.flight_price}</div>
+          <div className="flight-fare">{IDR.format(flight.flight_price)}</div>
           <div className="with-icon flight_seatavail">
             Seats available
             <span className="material-symbols-outlined">flight_class</span>

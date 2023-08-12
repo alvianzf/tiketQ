@@ -39,3 +39,23 @@ export const getPrice = async (params: Object) :Promise<Array> => {
 
     return result
 }
+
+export const postBooking = async (params: Object) :Promise<Array> => {
+    let result: Object = [];
+
+    await data.post('/postbooking-json', params)
+        .then(res => result =res.data)
+        .catch(err => result = err);
+
+    return result
+}
+
+export const getBooking = async (params: Object) :Promise<Array> => {
+    let result: Object = [];
+
+    await data.post('/getstatusbooking-json', params)
+        .then(res => result =res.data)
+        .catch(err => result = err);
+
+    return result
+}
